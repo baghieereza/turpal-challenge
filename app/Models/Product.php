@@ -12,8 +12,6 @@ class Product extends Model
     const DefaultFilterPeriod = 2;
     protected $fillable = ['name' , 'description','thumbnail'];
 
-    protected $casts = ['thumbnail' => 'array'];
-
     public function availabilities()
     {
         return $this->hasMany(Availability::class);

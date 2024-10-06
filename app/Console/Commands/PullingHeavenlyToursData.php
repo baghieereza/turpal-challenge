@@ -54,11 +54,17 @@ class PullingHeavenlyToursData extends Command
         $details = [];
         foreach ($tours as $tour) {
             $result = $this->heavenlyToursApi->getTourDetails($tour['id']);
+            $thumbnail = "";
+            foreach ($result['photos'] as $photo){
+                if ($photo['type'] == 'thumbnail'){
+                    $thumbnail = $photo['url'];
+                }
+            }
             $details[] = [
                 'id' => $result['id'],
                 'name' => $result['title'],
                 'description' => $result['description'],
-                'thumbnail' => $result['photos']
+                'thumbnail' => $thumbnail
             ];
         }
         return $details;
