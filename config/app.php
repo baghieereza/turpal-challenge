@@ -1,5 +1,6 @@
 <?php
 
+use HeavenlyTours\HeavenlyToursServiceProvider;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -185,7 +186,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        HeavenlyToursServiceProvider::class,
         /*
          * Application Service Providers...
          */

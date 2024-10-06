@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Availability extends Model
 {
     use HasFactory;
+    protected $fillable = ['product_id ' , 'price','start_time','end_time'];
 
     public function product()
     {
